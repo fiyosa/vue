@@ -1,0 +1,4 @@
+<template>
+  <!--  -->
+  User Post
+</template>
