@@ -1,13 +1,7 @@
-<script lang="ts">
+<script setup lang="ts">
 import Navbar from './components/Navbar.vue'
-// import secret from './config/secret'
-// console.log(secret)
-
-export default {
-  components: {
-    Navbar,
-  },
-}
+import secret from './config/secret'
+console.log(secret)
 </script>
 
 <template>
