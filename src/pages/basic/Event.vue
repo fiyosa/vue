@@ -1,31 +1,29 @@
-<script lang="ts">
-export default {
-  data() {
-    return {
-      count: 0,
-      count2: 0,
-      count3: 0,
-    }
-  },
-  methods: {
-    plus() {
-      this.count3++
-    },
-    min() {
-      this.count3--
-    },
-    sayHello(data: string) {
-      alert(data)
-    },
-    handleSubmit(event: Event) {
-      event.preventDefault()
+<script setup lang="ts">
+import { ref } from 'vue'
 
-      if (!(event.currentTarget instanceof HTMLFormElement)) return
+const count = ref(0)
+const count2 = ref(0)
+const count3 = ref(0)
 
-      const data = new FormData(event.currentTarget)
-      console.log(data.get('username'))
-    },
-  },
+const plus = () => {
+  count3.value++
+}
+
+const min = () => {
+  count3.value--
+}
+
+const sayHello = (data: string) => {
+  alert(data)
+}
+
+const handleSubmit = (event: Event) => {
+  event.preventDefault()
+
+  if (!(event.currentTarget instanceof HTMLFormElement)) return
+
+  const data = new FormData(event.currentTarget)
+  console.log(data.get('username'))
 }
 </script>
 

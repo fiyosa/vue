@@ -1,18 +1,18 @@
-<script lang="ts">
-export default {
-  props: {
-    name: String,
-  },
-  emits: ['response'],
-  methods: {
-    showData() {
-      this.$emit('response', this.name)
-    },
-  },
+<script setup lang="ts">
+const props = defineProps({
+  name: String,
+})
+
+const emits = defineEmits({
+  response: String,
+})
+
+const showData = () => {
+  emits('response', props.name ?? '???')
 }
 </script>
 
 <template>
   <slot>Ini adalah slot</slot> <br />
-  Ini adalah data dari {{ name }} <button @click="showData">Show Detail</button> <br />
+  Ini adalah data dari {{ props.name }} <button @click="showData">Show Detail</button> <br />
 </template>

@@ -1,14 +1,8 @@
-<script lang="ts">
-// console.log('looping')
+<script setup lang="ts">
+import { ref } from 'vue'
 
-export default {
-  data() {
-    return {
-      username: '',
-      gender: '',
-    }
-  },
-}
+const username = ref('')
+const gender = ref('')
 </script>
 
 <template>

@@ -1,18 +1,11 @@
-<script lang="ts">
-export default {
-  data() {
-    return {
-      firstName: '',
-      middlename: '',
-      lastName: '',
-    }
-  },
-  computed: {
-    fullName() {
-      return this.firstName + ' ' + this.middlename + ' ' + this.lastName
-    },
-  },
-}
+<script setup lang="ts">
+import { computed, ref } from 'vue'
+
+const firstName = ref('')
+const middlename = ref('')
+const lastName = ref('')
+
+const fullName = computed(() => firstName.value + ' ' + middlename.value + ' ' + lastName.value)
 </script>
 
 <template>

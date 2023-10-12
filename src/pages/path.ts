@@ -7,6 +7,7 @@ const path = createRouter({
     { path: '', component: () => import('./Dashboard.vue') },
     { path: '/about', component: () => import('./About.vue') },
     { path: '/user', component: () => import('./User.vue') },
+
     {
       path: '',
       component: () => import('./UserIndex.vue'),
@@ -22,6 +23,7 @@ const path = createRouter({
         { path: '/computed', component: () => import('./basic/Computed.vue') },
         { path: '/watcher', component: () => import('./basic/Watcher.vue') },
         { path: '/lifecycle', component: () => import('./basic/Lifecycle.vue') },
+        { path: '/props', component: () => import('./basic/Props.vue') },
         { path: '/vuex', component: () => import('./basic/Vuex.vue') },
       ],
     },

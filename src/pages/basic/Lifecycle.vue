@@ -1,30 +1,25 @@
-<script lang="ts">
-export default {
-  data() {
-    return {
-      message: 'Hello World',
-      count: 0,
-    }
-  },
-  beforeCreate() {
-    console.log('beforeCreate:', this.message)
-  },
-  created() {
-    console.log('created:', this.message)
-  },
-  beforeMount() {
-    console.log('beforeMount:', this.$refs.inputan?.value)
-  },
-  mounted() {
-    console.log('mounted:', this.$refs.inputan?.value)
-  },
-  beforeUpdate() {
-    console.log('beforeUpdate:', this.$refs.hitungan?.value)
-  },
-  updated() {
-    console.log('updated:', this.$refs.hitungan?.value)
-  },
-}
+<script setup lang="ts">
+import { onBeforeMount, onBeforeUpdate, onMounted, onUpdated, ref } from 'vue'
+
+const count = ref(0)
+const inputan = ref<HTMLInputElement | null>(null)
+const hitungan = ref<HTMLInputElement | null>(null)
+
+onBeforeMount(() => {
+  console.log('beforeMount:', inputan.value?.value)
+})
+
+onMounted(() => {
+  console.log('mounted:', inputan.value?.value)
+})
+
+onBeforeUpdate(() => {
+  console.log('beforeUpdate:', hitungan.value?.value)
+})
+
+onUpdated(() => {
+  console.log('updated:', hitungan.value?.value)
+})
 </script>
 
 <template>

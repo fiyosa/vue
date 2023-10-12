@@ -1,13 +1,8 @@
-<script lang="ts">
-import { store } from '../vuex/store'
+<script setup lang="ts">
+import { computed } from 'vue'
+import { store } from '../store/store'
 
-export default {
-  computed: {
-    count() {
-      return store.state.count
-    },
-  },
-}
+const count = computed(() => store.state.count)
 </script>
 
 <template>
@@ -20,6 +15,7 @@ export default {
     <RouterLink to="/computed">Computed</RouterLink>
     <RouterLink to="/watcher">Watcher</RouterLink>
     <RouterLink to="/lifecycle">Lifecycle</RouterLink>
+    <RouterLink to="/props">Props</RouterLink>
     <RouterLink to="/vuex">VueX</RouterLink>
   </div>
   <div>
@@ -41,3 +37,4 @@ a:hover {
   color: red;
 }
 </style>
+../store/store

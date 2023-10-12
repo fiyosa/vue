@@ -1,13 +1,8 @@
-<script lang="ts">
-import { store } from '../vuex/store'
+<script setup lang="ts">
+import { computed } from 'vue'
+import { store } from '../store/store'
 
-export default {
-  computed: {
-    movies() {
-      return store.state.movies
-    },
-  },
-}
+const movies = computed(() => store.state.movies)
 </script>
 
 <template>
@@ -40,3 +35,4 @@ ul li img {
   width: 50px;
 }
 </style>
+../store/store

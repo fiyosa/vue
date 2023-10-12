@@ -1,15 +1,10 @@
-<script lang="ts">
-export default {
-  data() {
-    return {
-      fruits: ['apple', 'orange', 'lemon', 'papaya'],
-    }
-  },
-  methods: {
-    hapus(index: number) {
-      this.fruits.splice(index, 1)
-    },
-  },
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const fruits = ref(['apple', 'orange', 'lemon', 'papaya'])
+
+const hapus = (index: number) => {
+  fruits.value.splice(index, 1)
 }
 </script>
 

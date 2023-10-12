@@ -1,35 +1,30 @@
-<script lang="ts">
-import { action, store } from '../../vuex/store'
+<script setup lang="ts">
+import { action, store } from '../../store/store'
 import Movie from '../../components/Movie.vue'
+import { onBeforeMount } from 'vue'
 
-export default {
-  components: {
-    Movie,
-  },
-  methods: {
-    increment() {
-      store.dispatch(action('increment'))
-    },
-    decrement() {
-      store.dispatch(action('decrement'))
-    },
-    startCount() {
-      store.dispatch(action('startCount'), 10)
-    },
-    reset() {
-      store.dispatch(action('reset'))
-    },
-    previous() {
-      store.dispatch(action('previous'))
-    },
-    next() {
-      store.dispatch(action('next'))
-    },
-  },
-  beforeCreate: async () => {
-    await store.dispatch(action('previous'))
-  },
+const increment = () => {
+  store.dispatch(action('increment'))
 }
+const decrement = () => {
+  store.dispatch(action('decrement'))
+}
+const startCount = () => {
+  store.dispatch(action('startCount'), 10)
+}
+const reset = () => {
+  store.dispatch(action('reset'))
+}
+const previous = () => {
+  store.dispatch(action('previous'))
+}
+const next = () => {
+  store.dispatch(action('next'))
+}
+
+onBeforeMount(() => {
+  store.dispatch(action('previous'))
+})
 </script>
 
 <template>
@@ -47,3 +42,4 @@ export default {
 
   <Movie />
 </template>
+../../store/store

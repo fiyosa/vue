@@ -1,18 +1,13 @@
-<script lang="ts">
-export default {
-  data() {
-    return {
-      message: 'hello world',
-      tampil: false,
-      nilai: 7,
-      stateLampu: true,
-    }
-  },
-  methods: {
-    saklar() {
-      this.stateLampu = !this.stateLampu
-    },
-  },
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const message = ref('hello world')
+const tampil = ref(false)
+const nilai = ref(7)
+const stateLampu = ref(true)
+
+const saklar = () => {
+  stateLampu.value = !stateLampu.value
 }
 </script>
 
