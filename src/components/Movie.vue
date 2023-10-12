@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { store } from '../store/store'
 
-const movies = computed(() => store.state.movies)
+const movies = computed(() => store.state.movies.data)
 </script>
 
 <template>

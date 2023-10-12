@@ -3,14 +3,16 @@ import { ActionContext } from 'vuex'
 type IContex = ActionContext<IMovie, IMovie>
 
 interface IMovie {
-  pageMovie: number
   movies: {
-    Title: string
-    Year: string
-    imdbID: string
-    Type: string
-    Poster: string
-  }[]
+    page: number
+    data: {
+      Title: string
+      Year: string
+      imdbID: string
+      Type: string
+      Poster: string
+    }[]
+  }
 }
 
 const fetchGetMovie = async (page: number) => {
@@ -26,23 +28,37 @@ const fetchGetMovie = async (page: number) => {
 }
 
 export const movieStoreState: IMovie = {
-  pageMovie: 1,
-  movies: [],
+  movies: {
+    page: 1,
+    data: [],
+  },
 }
 
 export const movieStoreAction = {
   async previous(contex: IContex) {
-    let page = contex.state.pageMovie - 1
+    let page = contex.state.movies.page - 1
     page = page < 1 ? 1 : page
-    contex.state.pageMovie = page
+    contex.state.movies = {
+      ...contex.state.movies,
+      page,
+    }
     const getMovie = await fetchGetMovie(page)
-    contex.state.movies = getMovie
+    contex.state.movies = {
+      ...contex.state.movies,
+      data: getMovie,
+    }
   },
 
   async next(contex: IContex) {
-    const page = contex.state.pageMovie + 1
-    contex.state.pageMovie = page
+    const page = contex.state.movies.page + 1
+    contex.state.movies = {
+      ...contex.state.movies,
+      page,
+    }
     const getMovie = await fetchGetMovie(page)
-    contex.state.movies = getMovie
+    contex.state.movies = {
+      ...contex.state.movies,
+      data: getMovie,
+    }
   },
 }
