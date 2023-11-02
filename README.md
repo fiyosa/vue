@@ -13,6 +13,8 @@
 
 - **[Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)**
 - **[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)**
+- **[Vue](https://marketplace.visualstudio.com/items?itemName=Vue.volar)**
+- **[Vue TS](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)**
 
 # Copy files ( for Laravel )
 
