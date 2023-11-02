@@ -6,7 +6,7 @@ const movies = computed(() => store.state.movies.data)
 </script>
 
 <template>
-  <ul v-for="movie in movies">
+  <ul v-for="(movie, index) in movies" :key="index">
     <li>
       <img :src="movie?.Poster" />
       <h4>{{ movie?.Title }}</h4>
@@ -35,4 +35,3 @@ ul li img {
   width: 50px;
 }
 </style>
-../store/store

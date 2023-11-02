@@ -20,7 +20,9 @@ const sayHello = (data: string) => {
 const handleSubmit = (event: Event) => {
   event.preventDefault()
 
-  if (!(event.currentTarget instanceof HTMLFormElement)) return
+  if (!(event.currentTarget instanceof HTMLFormElement)) {
+    return
+  }
 
   const data = new FormData(event.currentTarget)
   console.log(data.get('username'))

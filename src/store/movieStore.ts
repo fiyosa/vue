@@ -23,7 +23,9 @@ const fetchGetMovie = async (page: number) => {
     },
   })
   const resMovie = await getMovie.json()
-  if (getMovie.status !== 200) return []
+  if (getMovie.status !== 200) {
+    return []
+  }
   return resMovie?.Search ?? []
 }
 

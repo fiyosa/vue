@@ -16,7 +16,7 @@ export default {
   <h1>User Page</h1>
   <h2>List User</h2>
   <ul>
-    <li v-for="user in users">
+    <li v-for="(user, index) in users" :key="index">
       <RouterLink :to="'/user/' + user.params">{{ user.name }}</RouterLink>
     </li>
   </ul>

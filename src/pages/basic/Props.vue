@@ -3,7 +3,7 @@ import Student from '../../components/Student.vue'
 </script>
 
 <template>
-  <Student name="hello world" @response="(event:string)=>console.log(event)">
+  <Student name="hello world" @response="(event: string) => console.log(event)">
     Ini adalah nilai slot dari parent
   </Student>
 </template>

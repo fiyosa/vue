@@ -9,15 +9,15 @@ const hapus = (index: number) => {
 </script>
 
 <template>
-  <div v-for="angka in 5">{{ angka }}</div>
+  <div v-for="(angka, index) in 5" :key="index">{{ angka }}</div>
 
   <br />
 
-  <div v-for="fruit in fruits">{{ fruit }}</div>
+  <div v-for="(fruit, index) in fruits" :key="index">{{ fruit }}</div>
 
   <br />
 
-  <ul v-for="(fruit, index) in fruits">
+  <ul v-for="(fruit, index) in fruits" :key="index">
     <li>{{ fruit }} {{ index }} <button @click="hapus(index)">X</button></li>
   </ul>
 </template>
