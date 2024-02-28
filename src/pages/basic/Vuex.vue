@@ -42,4 +42,3 @@ onBeforeMount(() => {
 
   <Movie />
 </template>
-../../store/store

@@ -25,6 +25,7 @@ const path = createRouter({
         { path: '/lifecycle', component: () => import('./basic/Lifecycle.vue') },
         { path: '/props', component: () => import('./basic/Props.vue') },
         { path: '/vuex', component: () => import('./basic/Vuex.vue') },
+        { path: '/provide-inject', component: () => import('./basic/ProvideNInject.vue') },
       ],
     },
 

@@ -1,8 +1,11 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, inject } from 'vue'
 import { store } from '../store/store'
+import { countProvide, toggleProvide } from '../provide'
 
 const count = computed(() => store.state.count)
+const countByProvide = inject<typeof countProvide.value>(countProvide.key, countProvide.value)
+const toggleByProvide = inject<typeof toggleProvide.value>(toggleProvide.key, toggleProvide.value)
 </script>
 
 <template>
@@ -17,6 +20,7 @@ const count = computed(() => store.state.count)
     <RouterLink to="/lifecycle">Lifecycle</RouterLink>
     <RouterLink to="/props">Props</RouterLink>
     <RouterLink to="/vuex">VueX</RouterLink>
+    <RouterLink to="/provide-inject">Provide/Inject</RouterLink>
   </div>
   <div>
     <RouterLink to="/">Dashboard</RouterLink>
@@ -24,6 +28,8 @@ const count = computed(() => store.state.count)
     <RouterLink to="/user">User</RouterLink>
   </div>
   <div>VueX count : {{ count }}</div>
+  <div>Provide count : {{ countByProvide.get.value.count }}</div>
+  <div>Provide count : {{ toggleByProvide.get.value.toggle }}</div>
 </template>
 
 <style scoped>
@@ -37,4 +43,3 @@ a:hover {
   color: red;
 }
 </style>
-../store/store
