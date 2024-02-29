@@ -4,8 +4,8 @@ import { store } from '../store/store'
 import { countProvide, toggleProvide } from '../provide'
 
 const count = computed(() => store.state.count)
-const countByProvide = inject<typeof countProvide.value>(countProvide.key, countProvide.value)
-const toggleByProvide = inject<typeof toggleProvide.value>(toggleProvide.key, toggleProvide.value)
+const countByProvide = inject(countProvide.key, countProvide.value)
+const toggleByProvide = inject(toggleProvide.key, toggleProvide.value)
 </script>
 
 <template>

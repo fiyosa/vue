@@ -2,8 +2,8 @@
 import { countProvide, toggleProvide } from '../../provide'
 import { inject } from 'vue'
 
-const countByProvide = inject<typeof countProvide.value>(countProvide.key, countProvide.value)
-const toggleByProvide = inject<typeof toggleProvide.value>(toggleProvide.key, toggleProvide.value)
+const countByProvide = inject(countProvide.key, countProvide.value)
+const toggleByProvide = inject(toggleProvide.key, toggleProvide.value)
 
 const increment = () => {
   countByProvide.set({ count: countByProvide.get.value.count + 1 })
