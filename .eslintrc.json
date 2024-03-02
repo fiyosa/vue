@@ -16,6 +16,7 @@
     "sourceType": "module"
   },
   "plugins": ["@typescript-eslint", "vue", "prettier"], // add prettier formater
+  "ignorePatterns": ["node_modules", "vendor", "build", "dist"],
   "rules": {
     // vue start
     "vue/multi-word-component-names": "off", // allow name component 1 word
