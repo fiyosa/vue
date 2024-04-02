@@ -1,18 +1,23 @@
 # Install package
 
 - delete dependencies and devDependencies in package.json
+
 ```sh
 yarn add @types/node dotenv vue vue-router vite vue-tsc typescript @vitejs/plugin-vue --network-timeout 100000
 ```
+
 ```sh
 yarn add vuex
 ```
 
 # Setup eslint and prettier
 
+to bypass checking --no-verify
+
 ```sh
 yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-plugin-vue
 ```
+
 ```sh
 yarn add -D prettier eslint-config-prettier eslint-plugin-prettier
 ```
