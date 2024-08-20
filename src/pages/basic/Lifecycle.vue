@@ -1,24 +1,25 @@
 <script setup lang="ts">
 import { onBeforeMount, onBeforeUpdate, onMounted, onUpdated, ref } from 'vue'
+import { logInfo } from '../../config/helper'
 
 const count = ref(0)
 const inputan = ref<HTMLInputElement | null>(null)
 const hitungan = ref<HTMLInputElement | null>(null)
 
 onBeforeMount(() => {
-  console.log('beforeMount:', inputan.value?.value)
+  logInfo('beforeMount:', inputan.value?.value)
 })
 
 onMounted(() => {
-  console.log('mounted:', inputan.value?.value)
+  logInfo('mounted:', inputan.value?.value)
 })
 
 onBeforeUpdate(() => {
-  console.log('beforeUpdate:', hitungan.value?.value)
+  logInfo('beforeUpdate:')
 })
 
 onUpdated(() => {
-  console.log('updated:', hitungan.value?.value)
+  logInfo('updated:', hitungan.value?.value)
 })
 </script>
 

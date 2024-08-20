@@ -1,2 +1,2 @@
-export { default as toggleProvide } from './toggleProvide'
-export { default as countProvide } from './countProvide'
+export { default as toggleProv } from './toggleProv'
+export { default as countProv } from './countProv'

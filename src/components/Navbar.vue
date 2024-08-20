@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { computed, inject } from 'vue'
 import { store } from '../store/store'
-import { countProvide, toggleProvide } from '../provide'
+import { countProv, toggleProv } from '../provide'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const count = computed(() => store.state.count)
-const countByProvide = inject(countProvide.key, countProvide.value)
-const toggleByProvide = inject(toggleProvide.key, toggleProvide.value)
+const countByProvide = inject(countProv.key, countProv.value)
+const toggleByProvide = inject(toggleProv.key, toggleProv.value)
 </script>
 
 <template>
@@ -23,9 +26,9 @@ const toggleByProvide = inject(toggleProvide.key, toggleProvide.value)
     <RouterLink to="/provide-inject">Provide/Inject</RouterLink>
   </div>
   <div>
-    <RouterLink to="/">Dashboard</RouterLink>
-    <RouterLink to="/about">About</RouterLink>
-    <RouterLink to="/user">User</RouterLink>
+    <button @click="() => router.push({ name: 'Dashboard' })">Dashboard</button>
+    <button @click="() => router.push({ name: 'About' })">About</button>
+    <button @click="() => router.push({ name: 'User', params: { id: 'testing' } })">User</button>
   </div>
   <div>VueX count : {{ count }}</div>
   <div>Provide count : {{ countByProvide.get.value.count }}</div>

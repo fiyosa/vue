@@ -17,6 +17,8 @@ const fullName = computed(() => firstName.value + ' ' + middlename.value + ' ' +
 
   <br />
 
+  <input type="text" placeholder="last name" v-model="lastName" /><br />
+
   <div>Full Name : {{ firstName }} {{ middlename }} {{ lastName }}</div>
   <div>Full Name : {{ fullName }}</div>
 </template>

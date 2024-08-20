@@ -1,4 +1,6 @@
 <script lang="ts">
+import { logInfo } from '../../config/helper'
+
 export default {
   data() {
     return {
@@ -8,10 +10,10 @@ export default {
   },
   watch: {
     message() {
-      console.log('test')
+      logInfo('test')
     },
     message2(current: string, previous: string) {
-      console.log({ current, previous })
+      logInfo({ current, previous })
     },
   },
 }

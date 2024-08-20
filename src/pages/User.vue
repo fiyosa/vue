@@ -1,15 +1,13 @@
-<script lang="ts">
-export default {
-  data() {
-    return {
-      users: [
-        { params: 'meg', name: 'Meg' },
-        { params: 'ben', name: 'Ben' },
-        { params: 'greg', name: 'Greg' },
-      ],
-    }
-  },
-}
+<script setup lang="ts">
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+
+const users = [
+  { params: 'meg', name: 'Meg' },
+  { params: 'ben', name: 'Ben' },
+  { params: 'greg', name: 'Greg' },
+]
 </script>
 
 <template>
@@ -17,7 +15,9 @@ export default {
   <h2>List User</h2>
   <ul>
     <li v-for="(user, index) in users" :key="index">
-      <RouterLink :to="'/user/' + user.params">{{ user.name }}</RouterLink>
+      <RouterLink :to="{ name: 'User', params: { id: user.params }, query: { data: route.params.id } }">{{
+        user.name
+      }}</RouterLink>
     </li>
   </ul>
 </template>

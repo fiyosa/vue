@@ -1,30 +1,30 @@
 <script setup lang="ts">
-import { countProvide, toggleProvide } from '../../provide'
+import { countProv, toggleProv } from '../../provide'
 import { inject } from 'vue'
 
-const countByProvide = inject(countProvide.key, countProvide.value)
-const toggleByProvide = inject(toggleProvide.key, toggleProvide.value)
+const count = inject(countProv.key, countProv.value)
+const toggle = inject(toggleProv.key, toggleProv.value)
 
 const increment = () => {
-  countByProvide.set({ count: countByProvide.get.value.count + 1 })
+  count.set({ count: count.get.value.count + 1 })
 }
 const decrement = () => {
-  countByProvide.set({ count: countByProvide.get.value.count - 1 })
+  count.set({ count: count.get.value.count - 1 })
 }
 const startCount = () => {
-  countByProvide.set({ count: 10 })
+  count.set({ count: 10 })
 }
 const reset = () => {
-  countByProvide.init()
+  count.init()
 }
 const setTrue = () => {
-  toggleByProvide.set({ toggle: true })
+  toggle.set({ toggle: true })
 }
 const setFalse = () => {
-  toggleByProvide.set({ toggle: false })
+  toggle.set({ toggle: false })
 }
 const setInit = () => {
-  toggleByProvide.init()
+  toggle.init()
 }
 </script>
 

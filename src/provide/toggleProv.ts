@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Ref, ref } from 'vue'
 
 interface IGet {
@@ -10,15 +9,12 @@ const init: IGet = {
 }
 
 const set = (e: IGet) => {
-  get.value = {
-    ...get.value,
-    toggle: e.toggle,
-  }
+  get.value = e
 }
 
 const get: Ref<IGet> = ref(init)
 
 export default {
-  key: 'switchProvide',
+  key: 'toggleProv',
   value: { get, set, init: () => (get.value = init) },
 }

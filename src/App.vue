@@ -2,12 +2,13 @@
 import { provide } from 'vue'
 import Navbar from './components/Navbar.vue'
 import secret from './config/secret'
-import { countProvide, toggleProvide } from './provide'
+import { countProv, toggleProv } from './provide'
+import { logInfo } from './config/helper'
 
-provide(toggleProvide.key, toggleProvide.value)
-provide(countProvide.key, countProvide.value)
+provide(toggleProv.key, toggleProv.value)
+provide(countProv.key, countProv.value)
 
-console.log(secret)
+logInfo(secret)
 </script>
 
 <template>
