@@ -1,31 +1,37 @@
 {
   "root": true,
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
+  "env": { "browser": true, "es2021": true },
+  "parserOptions": { "ecmaVersion": "latest", "parser": "@typescript-eslint/parser", "sourceType": "module" },
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:vue/vue3-essential",
     "plugin:prettier/recommended" // check prettier formater
   ],
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "parser": "@typescript-eslint/parser",
-    "sourceType": "module"
-  },
   "plugins": ["@typescript-eslint", "vue", "prettier"], // add prettier formater
   "ignorePatterns": ["node_modules", "vendor", "build", "dist"],
   "rules": {
     // vue start
+    "prettier/prettier": ["error", { "vueIndentScriptAndStyle": true }], // Enabling indentation for <script> and <style> in Vue files
+    "vue/component-tags-order": ["error", { "order": ["script", "template", "style"] }],
     "vue/multi-word-component-names": "off", // allow name component 1 word
     "vue/no-template-target-blank": "off", // allow tag 'a' doesn't have prop rel
     "vue/no-unused-vars": "error", // variable or function aren't used
     "vue/no-arrow-functions-in-watch": "off", // allow e.g. "a: (foo) => {}"
     // vue end
 
-    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "_", "varsIgnorePattern": "_" }], // variable or function aren't used
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "args": "all",
+        "argsIgnorePattern": "_",
+        "caughtErrors": "all",
+        "caughtErrorsIgnorePattern": "_",
+        "destructuredArrayIgnorePattern": "_",
+        "varsIgnorePattern": "_",
+        "ignoreRestSiblings": true
+      }
+    ], // variable or function aren't used
     "@typescript-eslint/no-explicit-any": "off", // type variable isn't used any
     "space-in-parens": ["error", "never"], // e.g. "if (foo)" instead of "if ( foo )"
     "object-curly-spacing": ["error", "always"], // e.g. { foo: bar} instead of {foo: bar}
@@ -46,7 +52,7 @@
     "no-mixed-spaces-and-tabs": "error", // disallow space and tab in same line
     "sort-imports": ["error", { "ignoreDeclarationSort": true }], // sorting import component
     "no-multiple-empty-lines": ["error", { "max": 1, "maxBOF": 0, "maxEOF": 0 }], // disallow blank in first line
-    "no-console": "error", // error use console.log
+    "no-console": "off", // error use console.log
     "eqeqeq": "off", // forces the use operator: === or !== instead of == or !=
     "keyword-spacing": "error", // space between syntax with name, e.g. "if (foo)" instead of "if(foo)"
     "no-case-declarations": "off", // allow switch without declare input type

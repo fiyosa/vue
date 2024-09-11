@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+  import { ref } from 'vue'
 
-const fruits = ref(['apple', 'orange', 'lemon', 'papaya'])
+  const fruits = ref(['apple', 'orange', 'lemon', 'papaya'])
 
-const hapus = (index: number) => {
-  fruits.value.splice(index, 1)
-}
+  const hapus = (index: number) => {
+    fruits.value.splice(index, 1)
+  }
 </script>
 
 <template>

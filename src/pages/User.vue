@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
+  import { useRoute } from 'vue-router'
 
-const route = useRoute()
+  const route = useRoute()
 
-const users = [
-  { params: 'meg', name: 'Meg' },
-  { params: 'ben', name: 'Ben' },
-  { params: 'greg', name: 'Greg' },
-]
+  const users = [
+    { params: 'meg', name: 'Meg' },
+    { params: 'ben', name: 'Ben' },
+    { params: 'greg', name: 'Greg' },
+  ]
 </script>
 
 <template>

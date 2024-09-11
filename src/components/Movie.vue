@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { store } from '../store/store'
+  import { computed } from 'vue'
+  import { store } from '../store/store'
 
-const movies = computed(() => store.state.movies.data)
+  const movies = computed(() => store.state.movies.data)
 </script>
 
 <template>
@@ -15,23 +15,23 @@ const movies = computed(() => store.state.movies.data)
 </template>
 
 <style scoped>
-ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 
-ul li {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-style: solid;
-  border-width: 2px;
-  height: 150px;
-}
-ul li img {
-  width: 50px;
-}
+  ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-width: 2px;
+    height: 150px;
+  }
+  ul li img {
+    width: 50px;
+  }
 </style>

@@ -1,31 +1,31 @@
 <script setup lang="ts">
-import { countProv, toggleProv } from '../../provide'
-import { inject } from 'vue'
+  import { countProv, toggleProv } from '../../provide'
+  import { inject } from 'vue'
 
-const count = inject(countProv.key, countProv.value)
-const toggle = inject(toggleProv.key, toggleProv.value)
+  const count = inject(countProv.key, countProv.value)
+  const toggle = inject(toggleProv.key, toggleProv.value)
 
-const increment = () => {
-  count.set({ count: count.get.value.count + 1 })
-}
-const decrement = () => {
-  count.set({ count: count.get.value.count - 1 })
-}
-const startCount = () => {
-  count.set({ count: 10 })
-}
-const reset = () => {
-  count.init()
-}
-const setTrue = () => {
-  toggle.set({ toggle: true })
-}
-const setFalse = () => {
-  toggle.set({ toggle: false })
-}
-const setInit = () => {
-  toggle.init()
-}
+  const increment = () => {
+    count.set({ count: count.get.value.count + 1 })
+  }
+  const decrement = () => {
+    count.set({ count: count.get.value.count - 1 })
+  }
+  const startCount = () => {
+    count.set({ count: 10 })
+  }
+  const reset = () => {
+    count.init()
+  }
+  const setTrue = () => {
+    toggle.set({ toggle: true })
+  }
+  const setFalse = () => {
+    toggle.set({ toggle: false })
+  }
+  const setInit = () => {
+    toggle.init()
+  }
 </script>
 
 <template>

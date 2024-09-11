@@ -1,15 +1,15 @@
 <script setup lang="ts">
-const props = defineProps({
-  name: String,
-})
+  const props = defineProps({
+    name: String,
+  })
 
-const emits = defineEmits({
-  response: String,
-})
+  const emits = defineEmits({
+    response: String,
+  })
 
-const showData = () => {
-  emits('response', props.name ?? '???')
-}
+  const showData = () => {
+    emits('response', props.name ?? '???')
+  }
 </script>
 
 <template>

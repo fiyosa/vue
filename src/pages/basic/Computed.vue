@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+  import { computed, ref } from 'vue'
 
-const firstName = ref('')
-const middlename = ref('')
-const lastName = ref('')
+  const firstName = ref('')
+  const middlename = ref('')
+  const lastName = ref('')
 
-const fullName = computed(() => firstName.value + ' ' + middlename.value + ' ' + lastName.value)
+  const fullName = computed(() => firstName.value + ' ' + middlename.value + ' ' + lastName.value)
 </script>
 
 <template>

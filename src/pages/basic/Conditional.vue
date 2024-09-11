@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+  import { ref } from 'vue'
 
-const message = ref('hello world')
-const tampil = ref(false)
-const nilai = ref(7)
-const stateLampu = ref(true)
+  const message = ref('hello world')
+  const tampil = ref(false)
+  const nilai = ref(7)
+  const stateLampu = ref(true)
 
-const saklar = () => {
-  stateLampu.value = !stateLampu.value
-}
+  const saklar = () => {
+    stateLampu.value = !stateLampu.value
+  }
 </script>
 
 <template>

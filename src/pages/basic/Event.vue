@@ -1,33 +1,33 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { logInfo } from '../../config/helper'
+  import { ref } from 'vue'
+  import { logInfo } from '../../config/helper'
 
-const count = ref(0)
-const count2 = ref(0)
-const count3 = ref(0)
+  const count = ref(0)
+  const count2 = ref(0)
+  const count3 = ref(0)
 
-const plus = () => {
-  count3.value++
-}
-
-const min = () => {
-  count3.value--
-}
-
-const sayHello = (data: string) => {
-  alert(data)
-}
-
-const handleSubmit = (event: Event) => {
-  event.preventDefault()
-
-  if (!(event.currentTarget instanceof HTMLFormElement)) {
-    return
+  const plus = () => {
+    count3.value++
   }
 
-  const data = new FormData(event.currentTarget)
-  logInfo(data.get('username'))
-}
+  const min = () => {
+    count3.value--
+  }
+
+  const sayHello = (data: string) => {
+    alert(data)
+  }
+
+  const handleSubmit = (event: Event) => {
+    event.preventDefault()
+
+    if (!(event.currentTarget instanceof HTMLFormElement)) {
+      return
+    }
+
+    const data = new FormData(event.currentTarget)
+    logInfo(data.get('username'))
+  }
 </script>
 
 <template>

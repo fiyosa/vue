@@ -1,30 +1,30 @@
 <script setup lang="ts">
-import { action, store } from '../../store/store'
-import Movie from '../../components/Movie.vue'
-import { onBeforeMount } from 'vue'
+  import { action, store } from '../../store/store'
+  import Movie from '../../components/Movie.vue'
+  import { onBeforeMount } from 'vue'
 
-const increment = () => {
-  store.dispatch(action('increment'))
-}
-const decrement = () => {
-  store.dispatch(action('decrement'))
-}
-const startCount = () => {
-  store.dispatch(action('startCount'), 10)
-}
-const reset = () => {
-  store.dispatch(action('reset'))
-}
-const previous = () => {
-  store.dispatch(action('previous'))
-}
-const next = () => {
-  store.dispatch(action('next'))
-}
+  const increment = () => {
+    store.dispatch(action('increment'))
+  }
+  const decrement = () => {
+    store.dispatch(action('decrement'))
+  }
+  const startCount = () => {
+    store.dispatch(action('startCount'), 10)
+  }
+  const reset = () => {
+    store.dispatch(action('reset'))
+  }
+  const previous = () => {
+    store.dispatch(action('previous'))
+  }
+  const next = () => {
+    store.dispatch(action('next'))
+  }
 
-onBeforeMount(() => {
-  store.dispatch(action('previous'))
-})
+  onBeforeMount(() => {
+    store.dispatch(action('previous'))
+  })
 </script>
 
 <template>

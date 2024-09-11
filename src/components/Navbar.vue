@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { computed, inject } from 'vue'
-import { store } from '../store/store'
-import { countProv, toggleProv } from '../provide'
-import { useRouter } from 'vue-router'
+  import { computed, inject } from 'vue'
+  import { store } from '../store/store'
+  import { countProv, toggleProv } from '../provide'
+  import { useRouter } from 'vue-router'
 
-const router = useRouter()
+  const router = useRouter()
 
-const count = computed(() => store.state.count)
-const countByProvide = inject(countProv.key, countProv.value)
-const toggleByProvide = inject(toggleProv.key, toggleProv.value)
+  const count = computed(() => store.state.count)
+  const countByProvide = inject(countProv.key, countProv.value)
+  const toggleByProvide = inject(toggleProv.key, toggleProv.value)
 </script>
 
 <template>
@@ -36,13 +36,13 @@ const toggleByProvide = inject(toggleProv.key, toggleProv.value)
 </template>
 
 <style scoped>
-a {
-  margin-right: 10px;
-  text-decoration: none;
-  color: rgb(67, 67, 233);
-}
+  a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: rgb(67, 67, 233);
+  }
 
-a:hover {
-  color: red;
-}
+  a:hover {
+    color: red;
+  }
 </style>

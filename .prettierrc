@@ -10,5 +10,5 @@
   "arrowParens": "always",
   "embeddedLanguageFormatting": "auto",
 
-  "jsxSingleQuote": false
+  "vueIndentScriptAndStyle": true
 }

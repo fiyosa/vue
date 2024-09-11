@@ -1,22 +1,17 @@
-<script lang="ts">
-import { logInfo } from '../../config/helper'
+<script setup lang="ts">
+  import { ref, watch } from 'vue'
+  import { logInfo } from '../../config/helper'
 
-export default {
-  data() {
-    return {
-      message: '',
-      message2: '',
-    }
-  },
-  watch: {
-    message() {
-      logInfo('test')
-    },
-    message2(current: string, previous: string) {
-      logInfo({ current, previous })
-    },
-  },
-}
+  const message = ref('')
+  const message2 = ref('')
+
+  watch(message, (curr, prev) => {
+    logInfo({ curr, prev })
+  })
+
+  watch(message2, (curr, prev) => {
+    logInfo({ curr, prev })
+  })
 </script>
 
 <template>

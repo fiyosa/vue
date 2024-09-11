@@ -15,7 +15,7 @@ yarn add vuex
 to bypass checking --no-verify
 
 ```sh
-yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-plugin-vue
+yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint@8.57.0 eslint-plugin-vue
 ```
 
 ```sh
