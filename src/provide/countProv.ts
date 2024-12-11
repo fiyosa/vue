@@ -13,8 +13,4 @@ const set = (e: IGet) => {
 }
 
 const get: Ref<IGet> = ref(init)
-
-export default {
-  key: 'countProv',
-  value: { get, set, init: () => (get.value = init) },
-}
+export const countProv = { key: 'countProv', value: { get, set, init: () => (get.value = init) } }

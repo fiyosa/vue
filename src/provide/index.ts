@@ -1,2 +1,3 @@
-export { default as toggleProv } from './toggleProv'
-export { default as countProv } from './countProv'
+export * from './toggleProv'
+export * from './countProv'
+export * from './provider'

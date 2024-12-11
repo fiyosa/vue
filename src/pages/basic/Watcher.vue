@@ -1,16 +1,15 @@
 <script setup lang="ts">
   import { ref, watch } from 'vue'
-  import { logInfo } from '../../config/helper'
 
   const message = ref('')
   const message2 = ref('')
 
   watch(message, (curr, prev) => {
-    logInfo({ curr, prev })
+    console.log({ curr, prev })
   })
 
   watch(message2, (curr, prev) => {
-    logInfo({ curr, prev })
+    console.log({ curr, prev })
   })
 </script>
 

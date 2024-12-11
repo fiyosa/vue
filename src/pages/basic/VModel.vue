@@ -1,6 +1,5 @@
 <script setup lang="ts">
   import { ref } from 'vue'
-  import { logInfo } from '../../config/helper'
 
   const username = ref('')
   const gender = ref('')
@@ -12,7 +11,7 @@
 
   function handleInput(e: Event) {
     const target = e.target as HTMLInputElement
-    logInfo('DEBUG', target.value)
+    console.log('DEBUG', target.value)
     if (/^[0-9]*$/.test(target.value)) {
       old.value = target.value
     } else target.value = old.value

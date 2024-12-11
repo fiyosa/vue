@@ -13,8 +13,4 @@ const set = (e: IGet) => {
 }
 
 const get: Ref<IGet> = ref(init)
-
-export default {
-  key: 'toggleProv',
-  value: { get, set, init: () => (get.value = init) },
-}
+export const toggleProv = { key: 'toggleProv', value: { get, set, init: () => (get.value = init) } }

@@ -1,6 +1,5 @@
 <script setup lang="ts">
   import { ref } from 'vue'
-  import { logInfo } from '../../config/helper'
 
   const count = ref(0)
   const count2 = ref(0)
@@ -26,7 +25,7 @@
     }
 
     const data = new FormData(event.currentTarget)
-    logInfo(data.get('username'))
+    console.log(data.get('username'))
   }
 </script>
 

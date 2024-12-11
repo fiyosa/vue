@@ -1,14 +1,8 @@
 <script setup lang="ts">
-  import { provide } from 'vue'
   import Navbar from './components/Navbar.vue'
   import secret from './config/secret'
-  import { countProv, toggleProv } from './provide'
-  import { logInfo } from './config/helper'
 
-  provide(toggleProv.key, toggleProv.value)
-  provide(countProv.key, countProv.value)
-
-  logInfo(secret)
+  console.log(secret)
 </script>
 
 <template>
