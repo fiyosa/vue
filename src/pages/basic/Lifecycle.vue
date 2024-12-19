@@ -14,7 +14,7 @@
   })
 
   onBeforeUpdate(() => {
-    console.log('beforeUpdate:')
+    console.log('beforeUpdate:', hitungan.value?.value)
   })
 
   onUpdated(() => {

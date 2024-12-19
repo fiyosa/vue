@@ -24,6 +24,7 @@ const routes: readonly RouteRecordRaw[] = [
       { path: '/props', component: () => import('./basic/Props.vue') },
       { path: '/vuex', component: () => import('./basic/Vuex.vue') },
       { path: '/provide-inject', component: () => import('./basic/ProvideNInject.vue') },
+      { name: 'Pinia', path: '/pinia', component: () => import('./basic/Pinia.vue') },
     ],
   },
 

@@ -1,30 +1,29 @@
 <script setup lang="ts">
-  import { countProv, toggleProv } from '../../provide'
-  import { inject } from 'vue'
+  import storePinia from '../../store-pinia'
 
-  const count = inject(countProv.key, countProv.value)
-  const toggle = inject(toggleProv.key, toggleProv.value)
+  const count = storePinia.count()
+  const toggle = storePinia.toggle()
 
   const increment = () => {
-    count.set({ count: count.get.value.count + 1 })
+    count.set(count.get + 1)
   }
   const decrement = () => {
-    count.set({ count: count.get.value.count - 1 })
+    count.set(count.get - 1)
   }
   const startCount = () => {
-    count.set({ count: 10 })
+    count.set(10)
   }
   const reset = () => {
-    count.init()
+    count.$reset()
   }
   const setTrue = () => {
-    toggle.set({ toggle: true })
+    toggle.set(true)
   }
   const setFalse = () => {
-    toggle.set({ toggle: false })
+    toggle.set(false)
   }
   const setInit = () => {
-    toggle.init()
+    toggle.$reset()
   }
 </script>
 
